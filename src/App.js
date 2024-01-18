@@ -1,24 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import ImageSearch from "./components/ImageSearch";
+import ImageCard from "./components/ImageCard";
 
 function App() {
+  const [term, setTerm] = useState('');
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="">
+      <ImageSearch searchText={text => setTerm(text)}></ImageSearch>
+      <ImageCard term={term}></ImageCard>
     </div>
+
   );
 }
 
